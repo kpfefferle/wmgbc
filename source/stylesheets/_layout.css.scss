@@ -1,4 +1,47 @@
 body {
   font-family: $font-custom;
-  background: white;
+  background: $white;
+}
+
+header {
+  position: relative;
+  padding: 25px 50px;
+  background: $header;
+
+  h1 {
+    position: relative;
+    margin: 0;
+    font: {
+      size: 35px;
+      weight: 800;
+    }
+    line-height: 35px;
+    color: $white;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      font-size: 25px;
+      line-height: 25px;
+    }
+  }
+
+  .contact {
+    @include position(absolute, 25px 50px 0 0);
+    text-align: right;
+
+    a {
+      font: {
+        size: 15px;
+        weight: 600;
+      }
+      line-height: 20px;
+      color: $contact;
+      text-decoration: none;
+
+      address {
+        font-style: normal;
+      }
+    }
+  }
 }

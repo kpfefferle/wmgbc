@@ -5,8 +5,21 @@ html
     meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
     title = current_page.data.title || "Westerville Mini Golf and Batting Cages"
 
-    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,800"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,600,800"
     = stylesheet_link_tag "application"
   body class=page_classes
+    header
+      h1
+        ' Westerville Mini Golf
+        span and Batting Cages
+      .contact
+        = link_to "https://www.google.com/maps/place/Westerville+Mini+Golf/" do
+          address
+            | 450 W. Schrock Rd.
+            br
+            | Westerville, Ohio 43081
+        = link_to "(614) 794-2670", "tel:16147942670"
     = yield
+    footer
+
     = javascript_include_tag  "application"

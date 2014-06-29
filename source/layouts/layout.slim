@@ -18,11 +18,16 @@ html
       .contact
         = link_to "https://www.google.com/maps/place/Westerville+Mini+Golf/" do
           address
-            | 450 W. Schrock Rd.
+            | 450 W. Schrock Road
             br
             | Westerville, Ohio 43081
         = link_to "(614) 794-2670", "tel:16147942670"
     = yield
     footer
-
+      .contact
+        = link_to "https://www.google.com/maps/place/Westerville+Mini+Golf/" do
+          address 450 W. Schrock Road, Westerville, Ohio 43081
+        = " | "
+        = link_to "(614) 794-2670", "tel:16147942670"
+      .copy &copy; #{Date.today.year} Westerville Mini Golf and Batting Cages. All rights reserved.
     = javascript_include_tag  "application"

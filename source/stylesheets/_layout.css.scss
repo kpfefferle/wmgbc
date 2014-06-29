@@ -61,3 +61,36 @@ header {
     }
   }
 }
+
+footer {
+  padding: 30px 50px;
+  text-align: center;
+
+  @media #{$mobile-breakpoint} {
+    padding: 30px;
+  }
+  .contact {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 20px;
+    color: $header;
+
+    a {
+      color: $contact;
+      text-decoration: none;
+
+      address {
+        display: inline;
+        font-style: normal;
+      }
+    }
+  }
+  .copy {
+    font: {
+      size: 15px;
+      weight: 600;
+    }
+    line-height: 20px;
+    color: $header;
+  }
+}

@@ -8,6 +8,9 @@ header {
   padding: 30px 50px;
   background: $header;
 
+  @media #{$mobile-breakpoint} {
+    padding: 30px;
+  }
   h1 {
     position: relative;
     margin: 0;

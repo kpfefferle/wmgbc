@@ -1,0 +1,15 @@
+section#banner {
+  position: relative;
+  height: 400px;
+
+  @media screen and (max-width: 600px) {
+    height: auto;
+    width: 100%;
+    padding-bottom: percentage(400/600);
+  }
+  .image {
+    position: absolute;
+    @include size(100% 100%);
+    background: red; // for testing
+  }
+}

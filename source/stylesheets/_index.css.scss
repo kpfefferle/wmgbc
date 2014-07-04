@@ -23,13 +23,13 @@ section#banner {
 section.content {
   position: relative;
   margin-bottom: 50px;
-  background: green; // TESTING
 
   .contents {
     position: relative;
     z-index: 1;
     margin-right: 60%;
     padding: 25px;
+    min-height: 350px;
     background: rgba(255,255,255,0.85);
 
     h2 {
@@ -47,7 +47,10 @@ section.content {
     }
     h3 {
       margin: 0 0 6px 0;
-      font-size: 20px;
+      font: {
+        size: 20px;
+        weight: 700;
+      }
       line-height: 20px;
       color: $med;
     }
@@ -65,10 +68,14 @@ section.content {
       text-size: 16px;
       line-height: 20px;
 
+      &:last-child {
+        margin-bottom: 0;
+      }
       th {
         width: 50%;
         padding-right: 5px;
         text-align: right;
+        font-weight: 600;
       }
       td {
         width: 50%;

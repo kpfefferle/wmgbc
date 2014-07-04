@@ -10,6 +10,11 @@ section#banner {
   .image {
     position: absolute;
     @include size(100% 100%);
-    background: red; // for testing
+    @include retina-image('/images/banner', nil, 'jpg', '/images/banner_2x');
+    background: {
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
   }
 }

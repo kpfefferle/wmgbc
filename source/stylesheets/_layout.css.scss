@@ -1,15 +1,20 @@
 body {
   font-family: $font-custom;
+  color: $dark;
   background: $white;
+  padding: 50px;
+
+  @media #{$mobile-breakpoint} {
+    padding: 20px;
+  }
 }
 
 header {
+  margin-bottom: 50px;
   position: relative;
-  padding: 30px 50px;
-  background: $header;
 
   @media #{$mobile-breakpoint} {
-    padding: 30px;
+    margin-bottom: 20px;
   }
   h1 {
     position: relative;
@@ -19,7 +24,7 @@ header {
       weight: 800;
     }
     line-height: 35px;
-    color: $white;
+    color: $alt;
     text-transform: uppercase;
 
     @media #{$mobile-breakpoint} {
@@ -39,7 +44,7 @@ header {
   }
 
   .contact {
-    @include position(absolute, 30px 50px 0 0);
+    @include position(absolute, 0px 0px 0 0);
     text-align: right;
 
     a {
@@ -48,7 +53,7 @@ header {
         weight: 600;
       }
       line-height: 20px;
-      color: lighten($contact, 15%);
+      color: $med;
       text-decoration: none;
 
       address {
@@ -63,21 +68,20 @@ header {
 }
 
 footer {
-  margin-top: 30px;
-  padding: 0 50px 30px 50px;
+  margin-top: 50px;
   text-align: center;
 
   @media #{$mobile-breakpoint} {
-    padding: 20px 30px 30px 30px;
+    margin-top: 20px;
   }
   .contact {
     margin-bottom: 10px;
     font-size: 15px;
     line-height: 20px;
-    color: $header;
+    color: $alt;
 
     a {
-      color: $contact;
+      color: $med;
       text-decoration: none;
 
       address {
@@ -92,6 +96,5 @@ footer {
       weight: 600;
     }
     line-height: 20px;
-    color: $header;
   }
 }

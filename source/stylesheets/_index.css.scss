@@ -8,6 +8,9 @@ section#banner {
     width: 100%;
     padding-bottom: percentage(400/600);
   }
+  @media #{$mobile-breakpoint} {
+    margin-bottom: 20px;
+  }
   .image {
     position: absolute;
     @include size(100% 100%);
@@ -32,6 +35,14 @@ section.content {
     min-height: 350px;
     background: rgba(255,255,255,0.85);
 
+    @media #{$tablet-breakpoint} {
+      margin-right: 50%;
+    }
+    @media #{$mobile-breakpoint} {
+      margin: 0 0 20px 0;
+      padding: 0;
+      background: none;
+    }
     h2 {
       margin: 24px 0 12px 0;
       font: {
@@ -92,6 +103,22 @@ section.content {
     background: {
       position: center center;
       size: cover;
+    }
+
+    @media #{$mobile-breakpoint} {
+      position: relative;
+      height: auto;
+      width: 100%;
+      padding-bottom: percentage(400/600);
+    }
+    .image-content {
+      @include position(absolute, 0px 0 0 0px);
+      @include size(100% 100%);
+      @include retina-image('/images/hours', nil, 'jpg');
+      background: {
+        position: center center;
+        size: cover;
+      }
     }
   }
 }

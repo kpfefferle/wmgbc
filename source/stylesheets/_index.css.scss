@@ -81,6 +81,9 @@ section.content {
         line-height: 12px;
       }
     }
+    a {
+      color: $med;
+    }
     table {
       margin-bottom: 12px;
       width: 100%;
@@ -134,6 +137,11 @@ section.content {
     }
     .image {
       @include retina-image('/images/tiger', nil, 'jpg');
+    }
+  }
+  &.birthdays {
+    .image {
+      @include retina-image('/images/cages', nil, 'jpg');
     }
   }
 }

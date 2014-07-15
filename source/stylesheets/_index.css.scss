@@ -6,7 +6,7 @@ section#banner {
   @media screen and (max-width: 600px) {
     height: auto;
     width: 100%;
-    padding-bottom: percentage(400/600);
+    padding-bottom: 80%;
   }
   @media #{$mobile-breakpoint} {
     margin-bottom: 20px;
@@ -109,7 +109,7 @@ section.content {
       position: relative;
       height: auto;
       width: 100%;
-      padding-bottom: percentage(400/600);
+      padding-bottom: 80%;
     }
     .image-content {
       @include position(absolute, 0px 0 0 0px);

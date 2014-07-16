@@ -1,6 +1,5 @@
 $ ->
 
-  week_hours = []
   time_zone = "America/New_York"
   date_format = "dddd M/D"
   time_format = "h:mma"
@@ -21,18 +20,17 @@ $ ->
     futureevents: true
     fields: "entry(title,gd:when)"
   , (data) ->
+    html_output = ""
+
     _.each data.feed.entry, (day) ->
       day_when = day.gd$when[0]
+      day_date = formatDate day_when.startTime
       if day.title.$t == "Closed"
         day_hours = "Closed"
       else
         day_open = formatTime day_when.startTime
         day_close = formatTime day_when.endTime
         day_hours = "#{day_open}-#{day_close}"
-      day_date = formatDate day_when.startTime
-      week_hours.push { date: day_date, hours: day_hours }
+      html_output += "<tr><th>#{day_date}</th><td>#{day_hours}</td></tr>"
 
-    html_output = ""
-    _.each week_hours, (day) ->
-      html_output += "<tr><th>#{day.date}</th><td>#{day.hours}</td></tr>"
     $("table#hours").html html_output

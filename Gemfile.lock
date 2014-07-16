@@ -122,6 +122,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coffee-script
   middleman (~> 3.3.3)
   middleman-gh-pages
   middleman-livereload (~> 3.1.0)

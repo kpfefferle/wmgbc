@@ -21,12 +21,15 @@ $ ->
   , (data) ->
     html_output = ""
 
-    _.each data.items, (promo) ->
-      promo_title = promo.summary
-      promo_date = formatDate promo.start.dateTime
-      promo_open = formatTime promo.start.dateTime
-      promo_close = formatTime promo.end.dateTime
-      promo_content = promo.description
-      html_output += "<article><h3>#{promo_title}</h3><p class='small'>#{promo_date} #{promo_open}-#{promo_close}</p><p>#{promo_content}</p></article>"
+    if data.items.length
+      _.each data.items, (promo) ->
+        promo_title = promo.summary
+        promo_date = formatDate promo.start.dateTime
+        promo_open = formatTime promo.start.dateTime
+        promo_close = formatTime promo.end.dateTime
+        promo_content = promo.description
+        html_output += "<article><h3>#{promo_title}</h3><p class='small'>#{promo_date} #{promo_open}-#{promo_close}</p><p>#{promo_content}</p></article>"
+    else
+      html_output += "<article><h3>No Current Promotions</h3><p>Check back here later for special deals and events!</p></article>"
 
     $("#promotions").html html_output

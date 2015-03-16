@@ -10,26 +10,24 @@ $ ->
   formatDate = (timestamp) ->
     moment(timestamp).tz(time_zone).format(date_format)
 
-  hours_url = "http://www.google.com/calendar/feeds/5j72n5flnhdq7s78ks3n12stgk@group.calendar.google.com/public/full"
+  hours_url = "https://www.googleapis.com/calendar/v3/calendars/5j72n5flnhdq7s78ks3n12stgk@group.calendar.google.com/events"
   $.get hours_url,
     alt: "json"
-    orderby: "starttime"
-    "max-results": 7
-    singleevents: true
-    sortorder: "ascending"
-    futureevents: true
-    fields: "entry(title,gd:when)"
+    key: "AIzaSyCYFGl_MCQq7TyZ3xXJvCcxHJSwleulLUk"
+    timeMin: moment().toISOString()
+    maxResults: 7
+    orderBy: "startTime"
+    singleEvents: true
   , (data) ->
     html_output = ""
 
-    _.each data.feed.entry, (day) ->
-      day_when = day.gd$when[0]
-      day_date = formatDate day_when.startTime
-      if day.title.$t == "Closed"
+    _.each data.items, (day) ->
+      day_date = formatDate day.start.dateTime
+      if day.summary == "Closed"
         day_hours = "Closed"
       else
-        day_open = formatTime day_when.startTime
-        day_close = formatTime day_when.endTime
+        day_open = formatTime day.start.dateTime
+        day_close = formatTime day.end.dateTime
         day_hours = "#{day_open}-#{day_close}"
       html_output += "<tr><th>#{day_date}</th><td>#{day_hours}</td></tr>"
 

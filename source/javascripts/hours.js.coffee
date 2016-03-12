@@ -23,7 +23,7 @@ $ ->
 
     if data.items.length
       _.each data.items, (day) ->
-        day_date = formatDate day.start.dateTime
+        day_date = formatDate day.start.dateTime || day.start.date
         if day.summary == "Closed"
           day_hours = "Closed"
         else

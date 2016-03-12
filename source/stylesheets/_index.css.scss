@@ -144,4 +144,7 @@ section.content {
       @include retina-image('/images/cages', nil, 'jpg');
     }
   }
+  &.social {
+    text-align: center;
+  }
 }

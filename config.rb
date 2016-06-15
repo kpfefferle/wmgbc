@@ -80,3 +80,12 @@ activate :sync do |sync|
   sync.existing_remote_files = 'keep'
   sync.gzip_compression = true
 end
+
+# Activate CloudFront extension
+activate :cloudfront do |cf|
+  cf.after_build = true
+  cf.access_key_id = ENV['AWS_ACCESS_KEY']
+  cf.secret_access_key = ENV['AWS_SECRET']
+  cf.distribution_id = ENV['CLOUDFRONT_DISTRIBUTION']
+  cf.filter = /\.html$/i
+end

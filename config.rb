@@ -67,10 +67,16 @@ configure :build do
 
   # Enable cache buster
   activate :asset_hash
+end
 
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+# Activate sync extension
+activate :sync do |sync|
+  sync.after_build = true
+  sync.fog_provider = 'AWS'
+  sync.fog_directory = ENV['FOG_DIRECTORY']
+  sync.fog_region = 'us-east-1'
+  sync.aws_access_key_id = ENV['AWS_ACCESS_KEY']
+  sync.aws_secret_access_key = ENV['AWS_SECRET']
+  sync.existing_remote_files = 'keep'
+  sync.gzip_compression = true
 end

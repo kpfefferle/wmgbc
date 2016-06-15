@@ -1,5 +1,7 @@
 require 'slim'
 
+activate :dotenv
+
 ###
 # Compass
 ###

@@ -71,7 +71,7 @@ end
 
 # Activate sync extension
 activate :sync do |sync|
-  sync.after_build = true
+  sync.after_build = false
   sync.fog_provider = 'AWS'
   sync.fog_directory = ENV['FOG_DIRECTORY']
   sync.fog_region = 'us-east-1'
@@ -83,7 +83,7 @@ end
 
 # Activate CloudFront extension
 activate :cloudfront do |cf|
-  cf.after_build = true
+  cf.after_build = false
   cf.access_key_id = ENV['AWS_ACCESS_KEY']
   cf.secret_access_key = ENV['AWS_SECRET']
   cf.distribution_id = ENV['CLOUDFRONT_DISTRIBUTION']

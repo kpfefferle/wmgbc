@@ -1,3 +1,10 @@
 test:
   override:
     - bundle exec middleman build
+deployment:
+  master:
+    branch: master
+    owner: rebase-interactive
+    commands:
+      - bundle exec middleman sync
+      - bundle exec middleman invalidate

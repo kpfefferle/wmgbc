@@ -1,8 +1,0 @@
-language: ruby
-rvm: 2.2
-
-script:
-  - bundle exec middleman build
-
-after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bundle exec middleman sync && bundle exec middleman invalidate

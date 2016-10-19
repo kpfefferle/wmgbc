@@ -74,7 +74,7 @@ activate :sync do |sync|
   sync.after_build = false
   sync.fog_provider = 'AWS'
   sync.fog_directory = ENV['FOG_DIRECTORY']
-  sync.fog_region = 'us-east-1'
+  sync.fog_region = 'us-east-2'
   sync.aws_access_key_id = ENV['AWS_ACCESS_KEY']
   sync.aws_secret_access_key = ENV['AWS_SECRET']
   sync.existing_remote_files = 'keep'
